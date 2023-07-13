@@ -5,27 +5,17 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 export const Table = () => {
 
   const data = [
-
     { name: 'Marcel', age: 30 },
-
     { name: 'Marilene', age: 65 },
-
     { name: 'Mikaela', age: 23 },
-
   ];
 
-
-
   const columns = [
-
-    { headerName: 'Name', field: 'name' },
-
+    { headerName: 'Name', field: 'name', sortable: true, editable: true, filter: true },
     { headerName: 'Age', field: 'age' }
-
   ]
 
   return (
-
     <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
       <AgGridReact rowData={data} columnDefs={columns} />
     </div>
