@@ -11,13 +11,15 @@ export const Table = () => {
   ];
 
   const columns = [
-    { headerName: 'Name', field: 'name', sortable: true, editable: true, filter: true },
+    { headerName: 'Name', field: 'name' },
     { headerName: 'Age', field: 'age' }
   ]
 
+  const defaultColDef = { sortable: true, editable: true, filter: true };
+
   return (
     <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={data} columnDefs={columns} />
+      <AgGridReact rowData={data} columnDefs={columns} defaultColDef={defaultColDef} />
     </div>
   )
 }
