@@ -11,7 +11,7 @@ export const Table = () => {
   ];
 
   const columns = [
-    { headerName: 'Name', field: 'name' },
+    { headerName: 'Name', field: 'name', checkboxSelection: true },
     { headerName: 'Age', field: 'age' }
   ]
 
