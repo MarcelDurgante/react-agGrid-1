@@ -3,9 +3,31 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 export const Table = () => {
+
+  const data = [
+
+    { name: 'Marcel', age: 30 },
+
+    { name: 'Marilene', age: 65 },
+
+    { name: 'Mikaela', age: 23 },
+
+  ];
+
+
+
+  const columns = [
+
+    { headerName: 'Name', field: 'name' },
+
+    { headerName: 'Age', field: 'age' }
+
+  ]
+
   return (
+
     <div>
-      <AgGridReact />
+      <AgGridReact rowData={data} columnDefs={columns} />
     </div>
   )
 }
