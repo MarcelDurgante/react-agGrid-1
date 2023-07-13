@@ -26,7 +26,7 @@ export const Table = () => {
 
   return (
 
-    <div>
+    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
       <AgGridReact rowData={data} columnDefs={columns} />
     </div>
   )
