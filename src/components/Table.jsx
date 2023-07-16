@@ -17,9 +17,22 @@ export const Table = () => {
 
   const defaultColDef = { sortable: true, editable: true, filter: true, floatingFilter: true };
 
+  let gridApi;
+
+  const onGridReady = params => {
+    gridApi = params.api;
+  }
+
+  const onExportClick = () => {
+    gridApi.exportDataAsCsv();
+  }
+
   return (
-    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={data} columnDefs={columns} defaultColDef={defaultColDef} />
-    </div>
+    <>
+      <button onClick={() => onExportClick()}>Export</button>
+      <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+        <AgGridReact rowData={data} columnDefs={columns} defaultColDef={defaultColDef} onGridReady={onGridReady} />
+      </div>
+    </>
   )
 }
