@@ -15,7 +15,7 @@ export const Table = () => {
     { headerName: 'Age', field: 'age' }
   ]
 
-  const defaultColDef = { sortable: true, editable: true, filter: true };
+  const defaultColDef = { sortable: true, editable: true, filter: true, floatingFilter: true };
 
   return (
     <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
