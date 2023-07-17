@@ -15,7 +15,13 @@ export const Table = () => {
     { headerName: 'Age', field: 'age' }
   ]
 
-  const defaultColDef = { sortable: true, editable: true, filter: true, floatingFilter: true };
+  const defaultColDef = {
+    sortable: true,
+    editable: true,
+    filter: true,
+    floatingFilter: true,
+    flex: 1
+  };
 
   let gridApi;
 
@@ -28,11 +34,14 @@ export const Table = () => {
   }
 
   return (
-    <>
+    <div style={{
+      height: 300,
+      width: '100vh',
+    }}
+      className="ag-theme-alpine"
+    >
       <button onClick={() => onExportClick()}>Export</button>
-      <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-        <AgGridReact rowData={data} columnDefs={columns} defaultColDef={defaultColDef} onGridReady={onGridReady} />
-      </div>
-    </>
+      <AgGridReact rowData={data} columnDefs={columns} defaultColDef={defaultColDef} onGridReady={onGridReady} />
+    </div>
   )
 }
